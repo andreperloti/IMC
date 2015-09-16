@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <EditText
+        android:id="@+id/editTextAltura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/lbl_height"/>
+
+    <EditText
+        android:id="@+id/editTextPeso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/lbl_weight"/>
+
+    <EditText
+        android:id="@+id/editTextResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/lbl_result"/>
+
+    <Button
+        android:id="@+id/buttonCalcular"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:hint="@string/lbl_calculate"
+        android:enabled="true"
+        android:textSize="25dp"
+        android:textColor="#fffff8f8"
+        android:textStyle="bold|italic"
+        android:textColorHint="#ffffffff"
+        android:background="#ff0f0f0f" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Classificação:"
+        android:id="@+id/classView"
+         />
+
+    <TextView
+        android:id="@+id/editTextClassification"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:hint="@string/lbl_classification"
+        android:autoText="false" />
+
+</LinearLayout>
