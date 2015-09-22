@@ -34,43 +34,54 @@ public class IMCActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 double resultadoIMC;
+                String validation = "Campo Obrigatorio!";
+                if (!FormHelper.validateRequired(validation, editTextAltura, editTextPeso)) {
+                    resultadoIMC = calcularIMC();
+
+                    String message = getString(R.string.msg_resultIMC, resultadoIMC);
+
+                    TextView classificacao = (TextView) findViewById(R.id.editTextClassification);
+                    classificacao.setText(classificacaoIMC(resultadoIMC));
+                    Toast.makeText(IMCActivity.this, classificacaoIMC(resultadoIMC), Toast.LENGTH_LONG).show();
+
+
+                    EditText result = (EditText) findViewById(R.id.editTextResult);
+                    result.setText(message);
+//                    Toast.makeText(IMCActivity.this, message, Toast.LENGTH_LONG).show();
+                }
+            }
+
+            private double calcularIMC() {
+                double resultadoIMC;
                 double peso = Double.parseDouble(editTextPeso.getText().toString());
-                double altura = Double.parseDouble(editTextAltura.getText().toString());
+                String textAltura = editTextAltura.getText().toString();
+
+                double altura = Double.parseDouble(textAltura.replace(",","."));
                 resultadoIMC = peso / (altura * altura);
-
-                String message = getString(R.string.msg_resultIMC, resultadoIMC);
-
-                TextView classificacao = (TextView) findViewById(R.id.editTextClassification);
-                classificacao.setText(classificacaoIMC(resultadoIMC));
-                Toast.makeText(IMCActivity.this, classificacaoIMC(resultadoIMC), Toast.LENGTH_SHORT).show();
-
-
-                EditText result = (EditText) findViewById(R.id.editTextResult);
-                result.setText(message);
-                Toast.makeText(IMCActivity.this, message, Toast.LENGTH_SHORT).show();
+                return resultadoIMC;
             }
         });
     }
 
-    private String classificacaoIMC(double resultado){
+    private String classificacaoIMC(double resultado) {
         String mensagem = "";
 
-        if(resultado<18){
+        if (resultado < 18) {
             mensagem = "Magreza";
         }
-        if(resultado>=18&&resultado<25){
+        if (resultado >= 18 && resultado < 25) {
             mensagem = "Normal";
         }
-        if(resultado>=25&&resultado<30){
+        if (resultado >= 25 && resultado < 30) {
             mensagem = "Sobrepeso";
         }
-        if(resultado>=30&&resultado<35){
+        if (resultado >= 30 && resultado < 35) {
             mensagem = "Obesidade Grau I";
         }
-        if(resultado>=35&&resultado<40){
+        if (resultado >= 35 && resultado < 40) {
             mensagem = "Obesidade Grau II";
         }
-        if(resultado>=40){
+        if (resultado >= 40) {
             mensagem = "Obesidade Grau III - Mórbida";
         }
         return mensagem;

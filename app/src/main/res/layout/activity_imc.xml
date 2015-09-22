@@ -8,13 +8,15 @@
         android:id="@+id/editTextAltura"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/lbl_height"/>
+        android:hint="@string/lbl_height"
+        android:numeric="decimal" />
 
     <EditText
         android:id="@+id/editTextPeso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/lbl_weight"/>
+        android:hint="@string/lbl_weight"
+        android:numeric="decimal" />
 
     <EditText
         android:id="@+id/editTextResult"
