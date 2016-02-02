@@ -6,10 +6,12 @@
     <string name="action_settings">Configurações</string>
     <string name="lbl_calculate">Calcular</string>
     <string name="lbl_result">Resultado</string>
-    <string name="lbl_weight">Peso</string>
+    <string name="lbl_weight">Peso (Kg)</string>
     <string name="msg_resultIMC">Seu IMC é : %f</string>
-    <string name="lbl_height">Altura</string>
-    <string name="lbl_classification">Classification</string>
+    <string name="lbl_height">Altura (cm ou m)</string>
+    <string name="lbl_classification">Classificação</string>
+    <string name="calculate_imc">Calcular seu IMC</string>
+    <string name="lbl_information">Digite abaixo sua altura e o seu peso para calcular seu IMC:</string>
 
 
 </resources>

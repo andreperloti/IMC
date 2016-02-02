@@ -1,53 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+
     android:weightSum="1">
 
-    <EditText
-        android:id="@+id/editTextAltura"
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/lbl_height"
-        android:numeric="decimal" />
+        android:layout_below="@+id/toolbar"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editTextPeso"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/lbl_weight"
-        android:numeric="decimal" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/lbl_information"
+            android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/editTextResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/lbl_result"/>
 
-    <Button
-        android:id="@+id/buttonCalcular"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:hint="@string/lbl_calculate"
-        android:enabled="true"
-        android:textSize="25dp"
-        android:textColor="#fffff8f8"
-        android:textStyle="bold|italic"
-        android:textColorHint="#ffffffff"
-        android:background="#ff0f0f0f" />
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/editTextAltura"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:hint="@string/lbl_height"
+                android:numeric="decimal"
+                android:textSize="20sp" />
+
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/editTextPeso"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:hint="@string/lbl_weight"
+                android:numeric="decimal"
+                android:textSize="20sp" />
+
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+    </LinearLayout>
 
     <TextView
+        android:id="@+id/textViewResult"
+        android:layout_below="@+id/linearLayout"
         android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textSize="18sp" />
+
+    <com.melnykov.fab.FloatingActionButton
+        android:id="@+id/floatingActionButtonCalculate"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Classificação:"
-        android:id="@+id/classView"
-         />
+        android:hint="Iniciar Treino"
+        android:padding="8dp"
+        android:backgroundTint="@color/accent"
+        android:backgroundTintMode="src_in"
+        android:elevation="5dp"
+        android:src="@drawable/ic_navigation_check"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-    <TextView
-        android:id="@+id/editTextClassification"
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:hint="@string/lbl_classification"
-        android:autoText="false" />
-
-</LinearLayout>
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package br.com.cast.turmaformacao.teste;
+package br.com.cast.turmaformacao.teste.util;
 
 
 import android.widget.EditText;
